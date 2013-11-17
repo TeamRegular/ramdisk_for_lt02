@@ -399,14 +399,6 @@ service setup_fs /system/bin/setup_fs /dev/block/mmcblk0p15 /dev/block/mmcblk0p1
     group root
     oneshot
 
-# check internal storage fs, this makes sure that /dev/block/mmcblk0p16 has valid fat file system on emei dkb
-# /dev/block/mmcblk0p16 is primary storage in emei dkb-emmc, customer should make sure their primary storage has valid
-# fat file system
-#service fsck /system/bin/emmc_fsck /dev/block/mmcblk0p16 /tmp
-#    class main
-#    user root
-#    oneshot
-
 service PowerDaemon /system/bin/powerdaemon -A -D
     class main
     user system
